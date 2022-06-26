@@ -11,6 +11,6 @@ RUN mkdir /tomcat_root/
 RUN echo 'app42.paas.db.username = "webappuser"' >> "Config.properties"
 RUN echo 'app42.paas.db.port = "3306"' >> "Config.properties"
 RUN echo 'app42.paas.db.password = "dbpassword"' >> "Config.properties"
-RUN echo 'app42.paas.db.ip = "84.201.166.180"' >> "Config.properties"
+RUN echo 'app42.paas.db.ip = "db"' >> "Config.properties"
 RUN echo 'app42.paas.db.name = "webappdb"' >> "Config.properties"
 RUN mv "Config.properties" /tomcat_root/
