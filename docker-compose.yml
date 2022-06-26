@@ -24,7 +24,7 @@ services:
     image: tomcat:9-jdk11
     volumes:
       - tomcat_webapps:/usr/local/tomcat/webapps:rw
-      - ./config:/usr/local/tomcat/webapps/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT
+      - ./config/Config.properties:/usr/local/tomcat/webapps/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT
     ports: 
       - "8080:8080"
     depends_on:
