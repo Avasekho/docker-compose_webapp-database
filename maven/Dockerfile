@@ -1,4 +1,4 @@
-FROM jamesdbloom/docker-java6-maven
+FROM maven:3.8-openjdk-8
 WORKDIR /tmp/
 RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
 WORKDIR /tmp/App42PaaS-Java-MySQL-Sample/
