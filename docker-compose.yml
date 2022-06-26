@@ -5,9 +5,9 @@ services:
     build:
       context: maven/
       args:
-        DBUSERNAME: root
+        DBUSERNAME: webappuser
         DBPORT: 3306
-        DBPASSWORD: dbrootpassword
+        DBPASSWORD: dbpassword
         DBIP: db
         DBNAME: webappdb
     volumes:
