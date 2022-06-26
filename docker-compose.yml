@@ -15,7 +15,7 @@ services:
 
 
   db:
-    image: mariadb
+    image: mariadb:10.5
     restart: always
     volumes:
     - /mysql_folder:/var/lib/mysql
@@ -26,7 +26,7 @@ services:
       MYSQL_DATABASE: webappdb
 
   tomcat:
-    image: tomcat:9.0.19-jre8-alpine
+    image: tomcat:9-jdk11
     volumes:
       - tomcat_webapps:/usr/local/tomcat/webapps:rw
     ports: 

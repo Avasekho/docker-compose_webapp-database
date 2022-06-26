@@ -13,7 +13,7 @@ RUN echo "app42.paas.db.username = ${DBUSERNAME}" >> "Config.properties" \
 && echo "app42.paas.db.ip = ${DBIP}" >> "Config.properties" \
 && echo "app42.paas.db.name = ${DBNAME}" >> "Config.properties" \
 && mv -f "Config.properties" /tmp/App42PaaS-Java-MySQL-Sample/WebContent/
-RUN mvn package
+RUN mvn clean package
 WORKDIR /tmp/App42PaaS-Java-MySQL-Sample/target/
 RUN mkdir /artifact_folder/
 RUN mv -f "App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war" /artifact_folder/
