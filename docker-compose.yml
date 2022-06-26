@@ -18,7 +18,7 @@ services:
       - "3306:3306"
 
   tomcat:
-    build: tomcat:8
+    build: tomcat:9
     volumes:
       - tomcat_webapps:/usr/local/tomcat/webapps:rw
       - tomcat_root:/usr/local/tomcat/webapps/ROOT:rw
