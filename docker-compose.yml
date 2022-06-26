@@ -18,7 +18,7 @@ services:
     image: mariadb:10.5
     restart: always
     volumes:
-    - /mysql_folder:/var/lib/mysql
+    - mysql_folder:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: dbrootpassword
       MYSQL_PASSWORD: dbpassword
@@ -37,3 +37,4 @@ services:
 
 volumes:
   tomcat_webapps:
+  mysql_folder:
