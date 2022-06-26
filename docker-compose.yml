@@ -14,6 +14,8 @@ services:
       MYSQL_PASSWORD: 'dbpassword'
       MYSQL_USER: 'webappuser'
       MYSQL_DATABASE: 'webappdb'
+    ports: 
+      - "3306:3306"
 
   tomcat:
     build: tomcat/
