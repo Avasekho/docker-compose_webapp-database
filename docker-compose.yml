@@ -5,20 +5,21 @@ services:
     build: maven/
     volumes:
       - tomcat_webapps:/artifact_folder:rw
+      - tomcat_root:/tomcat_root:rw
 
   db:
-    image: postgres:latest
-    ports: 
-      - "5432:5432"
+    image: mariadb:latest
     environment:
-      POSTGRES_PASSWORD: 'dbpassword'
-      POSTGRES_USER: 'webappuser'
-      POSTGRES_DB: 'webappdb'
+      MYSQL_ROOT_PASSWORD: 'dbrootpassword'
+      MYSQL_PASSWORD: 'dbpassword'
+      MYSQL_USER: 'webappuser'
+      MYSQL_DATABASE: 'webappdb'
 
   tomcat:
     build: tomcat/
     volumes:
       - tomcat_webapps:/usr/local/tomcat/webapps:rw
+      - tomcat_root:/usr/local/tomcat/webapps/ROOT:rw
     ports: 
       - "8080:8080"
     depends_on:
@@ -27,3 +28,4 @@ services:
 
 volumes:
   tomcat_webapps:
+  tomcat_root:
