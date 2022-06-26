@@ -8,7 +8,7 @@ services:
         DBUSERNAME: webappuser
         DBPORT: 3306
         DBPASSWORD: dbpassword
-        DBIP: db
+        DBIP: 51.250.105.110
         DBNAME: webappdb
     volumes:
       - tomcat_webapps:/artifact_folder:rw
