@@ -28,11 +28,11 @@ services:
       bash -c "cd /usr/local/tomcat/webapps/
       && ln -s $PWD/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT $PWD/hwk12
       && cd /var/lib/tomcat9/webapps/ROOT/
-      && app42.paas.db.username = "webappuser" >> Config.properties
-      && app42.paas.db.port = "5432" >> Config.properties
-      && app42.paas.db.password = "dbpassword" >> Config.properties
-      && app42.paas.db.ip = "db" >> Config.properties
-      && app42.paas.db.name = "webappdb" >> Config.properties"
+      && echo "app42.paas.db.username = "webappuser"" >> Config.properties
+      && echo "app42.paas.db.port = "5432"" >> Config.properties
+      && echo "app42.paas.db.password = "dbpassword"" >> Config.properties
+      && echo "app42.paas.db.ip = "db"" >> Config.properties
+      && echo "app42.paas.db.name = "webappdb"" >> Config.properties"
 
 volumes:
   tomcat_webapps:
