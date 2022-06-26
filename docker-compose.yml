@@ -16,7 +16,7 @@ services:
       MYSQL_DATABASE: 'webappdb'
 
   tomcat:
-    build: tomcat:9.0.19-jre8-alpine
+    image: tomcat:9.0.19-jre8-alpine
     volumes:
       - tomcat_webapps:/usr/local/tomcat/webapps:rw
       - tomcat_root:/usr/local/tomcat/webapps/ROOT:rw
