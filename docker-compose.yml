@@ -2,8 +2,7 @@ version: '3.7'
 
 services:
   maven:
-    build:
-      context: maven/
+    build: maven/
     volumes:
       - tomcat_webapps:/artifact_folder:rw
 
@@ -21,10 +20,9 @@ services:
       MYSQL_DATABASE: webappdb
 
   tomcat:
-    image: tomcat:9-jdk11
+    build: tomcat/ 
     volumes:
       - tomcat_webapps:/usr/local/tomcat/webapps:rw
-      - ./config/Config.properties:/usr/local/tomcat/webapps/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT/Config.properties
     ports: 
       - "8080:8080"
     depends_on:
