@@ -6,7 +6,7 @@ services:
     volumes:
       - tomcat_webapps:/artifact_folder:rw
       - tomcat_root:/tomcat_root:rw
-      - ./test1-host:/test1:rw
+      - ./test1-host/:/test1/
 
   db:
     image: postgres:latest
@@ -20,7 +20,7 @@ services:
     volumes:
       - tomcat_webapps:/usr/local/tomcat/webapps:rw
       - tomcat_root:/usr/local/tomcat/webapps/ROOT:rw
-      - ./test2-host:/test2
+      - ./test2-host/:/test2/
     ports: 
       - "8080:8080"
     depends_on:
