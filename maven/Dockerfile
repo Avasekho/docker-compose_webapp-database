@@ -8,9 +8,9 @@ RUN mkdir /artifact_folder/
 RUN mv "App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war" /artifact_folder/
 WORKDIR /tmp/
 RUN mkdir /tomcat_root/
-RUN echo "app42.paas.db.username = webappuser" >> "Config.properties" /
-    && echo "app42.paas.db.port = 3306" >> "Config.properties" /
-    && echo "app42.paas.db.password = dbpassword" >> "Config.properties" /
-    && echo "app42.paas.db.ip = db" >> "Config.properties" /
-    && echo "app42.paas.db.name = webappdb" >> "Config.properties" /
-    && mv "Config.properties" /tomcat_root/
+RUN echo "app42.paas.db.username = webappuser" >> "Config.properties" \
+&& echo "app42.paas.db.port = 3306" >> "Config.properties" \
+&& echo "app42.paas.db.password = dbpassword" >> "Config.properties" \
+&& echo "app42.paas.db.ip = db" >> "Config.properties" \
+&& echo "app42.paas.db.name = webappdb" >> "Config.properties" \
+&& mv "Config.properties" /tomcat_root/
