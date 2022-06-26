@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  maven:
+    build: maven/
+    volumes:
+      - tomcat_webapps:/artifact_folder:rw
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: 'dbpassword'
+      POSTGRES_USER: 'webappuser'
+      POSTGRES_DB: 'webappdb'
+
+  tomcat:
+    image: tomcat:9.0.19-jre8-alpine
+    volumes:
+      - tomcat_webapps:/usr/local/tomcat/webapps:rw
+    ports: 
+      - "8080:8080"
+    links:
+      - db
+    depends_on:
+      - maven
+      - db
+    command: bash -c "cd /usr/local/tomcat/webapps/ && ln -s $PWD/App42PaaS-Java-MySQL-Sample $PWD/hwk12"
+
+volumes:
+  tomcat_webapps:
