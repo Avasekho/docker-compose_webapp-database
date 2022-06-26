@@ -5,6 +5,7 @@ services:
     build: maven/
     volumes:
       - tomcat_webapps:/artifact_folder:rw
+      - tomcat_root:/tomcat_root:rw
 
   db:
     image: postgres
@@ -17,6 +18,7 @@ services:
     build: tomcat/
     volumes:
       - tomcat_webapps:/usr/local/tomcat/webapps:rw
+      - tomcat_root:/usr/local/tomcat/webapps/ROOT:rw
     ports: 
       - "8080:8080"
     links:
@@ -27,3 +29,4 @@ services:
 
 volumes:
   tomcat_webapps:
+  tomcat_root:
