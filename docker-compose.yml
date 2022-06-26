@@ -9,10 +9,10 @@ services:
   db:
     image: mariadb:latest
     environment:
-      MYSQL_ROOT_PASSWORD: 'dbrootpassword'
-      MYSQL_PASSWORD: 'dbpassword'
-      MYSQL_USER: 'webappuser'
-      MYSQL_DATABASE: 'webappdb'
+      MYSQL_ROOT_PASSWORD: dbrootpassword
+      MYSQL_PASSWORD: dbpassword
+      MYSQL_USER: webappuser
+      MYSQL_DATABASE: webappdb
 
   tomcat:
     image: tomcat:9.0.19-jre8-alpine
