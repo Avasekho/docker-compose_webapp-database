@@ -14,3 +14,5 @@ RUN echo 'app42.paas.db.password = "dbpassword"' >> "Config.properties"
 RUN echo 'app42.paas.db.ip = "db"' >> "Config.properties"
 RUN echo 'app42.paas.db.name = "webappdb"' >> "Config.properties"
 RUN mv "Config.properties" /tomcat_root/
+RUN mkdir /test1/
+RUN touch /test1/file1

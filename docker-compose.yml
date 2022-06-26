@@ -6,9 +6,10 @@ services:
     volumes:
       - tomcat_webapps:/artifact_folder:rw
       - tomcat_root:/tomcat_root:rw
+      - ./test1-host:/test1:rw
 
   db:
-    image: postgres
+    image: postgres:latest
     environment:
       POSTGRES_PASSWORD: 'dbpassword'
       POSTGRES_USER: 'webappuser'
@@ -19,10 +20,9 @@ services:
     volumes:
       - tomcat_webapps:/usr/local/tomcat/webapps:rw
       - tomcat_root:/usr/local/tomcat/webapps/ROOT:rw
+      - ./test2-host:/test2
     ports: 
       - "8080:8080"
-    links:
-      - db
     depends_on:
       - maven
       - db
