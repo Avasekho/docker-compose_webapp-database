@@ -4,15 +4,8 @@ services:
   maven:
     build:
       context: maven/
-      args:
-        DBUSERNAME: webappuser
-        DBPORT: 3306
-        DBPASSWORD: dbpassword
-        DBIP: 51.250.105.110
-        DBNAME: webappdb
     volumes:
       - tomcat_webapps:/artifact_folder:rw
-
 
   db:
     image: mariadb:10.5
