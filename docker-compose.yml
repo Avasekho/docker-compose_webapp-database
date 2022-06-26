@@ -7,7 +7,10 @@ services:
       - tomcat_webapps:/artifact_folder:rw
 
   db:
-    image: mariadb:latest
+    image: mariadb
+    restart: always
+    volumes:
+    - /mysql_folder:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: dbrootpassword
       MYSQL_PASSWORD: dbpassword
